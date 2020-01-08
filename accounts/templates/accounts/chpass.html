@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block head%}
+
+<title>Change Password</title>
+
+{% endblock %}
+
+{% block body %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'acoounts/cp.css' %}">
+<br>
+<br>
+<br>
+<br>
+<div class="card border-dark mb3">
+	<div class="card-header" style="background-color:black"><h1 style="color:white;text-align:center">Change Password</h1></div>
+        
+    <form method="POST" style="padding:20px; color:black">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <br>
+        <button class="btn-danger" type="submit">Submit</button>
+    </form>
+</div>
+{% endblock %}

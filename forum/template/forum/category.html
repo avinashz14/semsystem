@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block body%}
+
+<br>
+<br>
+<br>
+<br>
+
+
+<div class="row">
+	{% for cat in ca %}
+
+	<a href="{% url "identity" cat.id %}" class="bala" style="color:inherit"><div class="col" style="color:inherit">
+	<div class="card" style="width: 18rem;" >
+	{% if cat.imgg %}
+	<img class="card-img-top" src="{{cat.imgg.url}}" alt="Card image cap" style="height:200px;width:285px">
+	{% endif %}  
+	  <div class="card-body" >
+	    <h5 class="card-title" style="text-align:center">{{ cat.cat }}</h5>
+	  </div>
+	</div>
+	<br>
+	</div></a>
+	{% endfor %}
+	</div>
+
+{% endblock %}

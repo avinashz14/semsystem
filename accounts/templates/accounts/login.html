@@ -1,0 +1,44 @@
+
+{% extends 'base.html' %}
+
+{% block body %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'acoounts/log1.css' %}">
+
+   <br>
+   <br>
+   <br>
+   <br>
+   <br>
+   <br>
+   <div class="con" style="color:white;position: absolute;padding: 20px;" >
+	
+	
+	
+	   <h1 style="font-size:9vw">A Platform <br>For <span style="color:black">Reviews</span></h1>
+   </div>
+
+        <div class="card border-dark mb-3" id="Logg" style="position: absolute;right: 200px;width: 300px;">
+            <div class="card-header" style="background-color:black;color:white"><h1 style="text-align:center">Login</h1></div>
+	    <br>
+	    <br>
+	    
+            <form method="post" style="padding:20px;color: black;">
+                {% csrf_token %}
+                {{ form.as_p }}
+		
+		<h6 style="font-size:2">If you are not a registered user, you can register by clicking the register link in the bar above.</h6>
+		<br>
+		<button class="btn" style="background-color:black;color:white" type="submit">Smash It</button>
+		<br>
+		<br>
+		
+		
+		
+            </form>
+        
+        
+        </div>
+        
+    
+{% endblock %}

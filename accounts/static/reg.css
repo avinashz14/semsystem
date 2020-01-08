@@ -1,0 +1,10 @@
+body{
+    background-image: url('bang.jpg');
+}
+.card {
+    
+    position: absolute;
+    right: 300px;
+    
+    
+}

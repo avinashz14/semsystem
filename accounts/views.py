@@ -1,17 +1,16 @@
 from django.shortcuts import render,redirect
-from account.forms import (
+from accounts.forms import (
     RegistrationForm,
     EditProfileForm,
     ProfileForm,
 )
 from django.http import HttpResponseRedirect
-from django.contrib.auth.models import UserCreationForm, PasswordChangeForm
+from django.contrib.auth.forms import UserCreationForm, PasswordChangeForm
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import update_session_auth_hash
 
 # Create your views here.
 def register(request):
-
     if request.method=="POST":
         form=RegistrationForm(request.POST)
         if form.is_valid():
@@ -38,7 +37,6 @@ def edit_profile(request):
             if form.is_valid() and form1.is_valid():
                  form.save()
                  form1.save()
-                 
                  return redirect('/accounts/profile')
             
             else:

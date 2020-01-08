@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Add Review</title>
+{% endblock %}
+
+{% block body %}
+<br>
+<br>
+<br>
+<br>
+<br>
+<div class="card border-dark mb-3" id="Logg" style="width: 500px;position: absolute;right:450px" >
+		<div class="card-header" style="background-color:black;color:white"><h1 style="text-align:center">Change a Review</h1></div>
+		<br>
+		
+		<form method="post"  enctype='multipart/form-data' style="padding:20px;color:black">
+		    {% csrf_token %}
+		    {{ form.as_p }}
+		    
+		    <button class="btn" style="background-color:black;color:white" type="submit">Smash It</button>
+		</form>
+		
+	    
+	    
+	    </div>
+{% endblock %}

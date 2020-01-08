@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block head%}
+
+<title>Edit Profile</title>
+
+{% endblock %}
+
+{% block body %}
+
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'acoounts/edit.css' %}">
+<br>
+<br>
+<br>
+<br>
+
+<div class="card border-dark mb3">
+	<div class="card-header" style="background-color:black;color:white"><h1 style="text-align:center">Edit Profile</h1></div>
+    <br>
+    <form method="POST" enctype='multipart/form-data' style="padding:20px;color: black">
+        {% csrf_token %}
+        {{ form.as_p }}
+        {{form1.as_p}}
+        <br>
+        <button class="btn" type="submit" style="background-color:black;color:white">Save</button>
+    </form>
+</div>
+{% endblock %}

@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+
+{% block body %}
+{% for review in product %}
+<br>
+<br>
+<br>
+<br>
+
+<div class="row">
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<div class="card border-dark mb3" style="width:600px;position:absolute;right: 400px">
+			<div class="card-header" style="background-color:black;color:white"><h1 style="text-align:center"><h1>{{ review.name }}</h1></div>
+			<div class="contt" style="padding:20px">
+				<p>Category : {{ review.category }}</p>
+				<p>Location : {{ review.location }}</p>
+				
+				<p>Title : {{ review.title }}</p>
+				<p>Rating : {{ review.rating }} /5</p>
+				<h2>Review : {{ review.review }}</h2>
+				<br>
+				<p>Posted By : <br><br>
+					{% if review.user.userprofile.image %}
+	      <img class="uk-border-circle" style="width:60px;height:60px;border-radius: 50%" src="{{ review.user.userprofile.image.url }}">
+	      {% else %}
+	      <img class="uk-border-circle" style="width:60px;height:60px;border-radius: 50%" src="http://profilepicturesdp.com/wp-content/uploads/2018/06/default-facebook-dp-9.jpg">
+	      {% endif %}
+	      <span><b>{{ review.user.get_full_name }}</b></span></p>
+		        </div>
+			
+			
+			
+		</div>
+	
+</div>
+{% endfor %}
+{% endblock %}
